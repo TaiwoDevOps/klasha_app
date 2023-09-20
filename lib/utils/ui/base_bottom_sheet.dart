@@ -1,5 +1,4 @@
 import "package:flutter/material.dart";
-import "package:klasha_app/config/color.dart";
 
 class BaseBottomSheet extends StatelessWidget {
   const BaseBottomSheet(
@@ -60,7 +59,7 @@ class BaseBottomSheet extends StatelessWidget {
                   subtitle ?? '',
                   style: const TextStyle(
                     fontSize: 20,
-                    color: AppColors.black,
+                    color: Colors.black,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
