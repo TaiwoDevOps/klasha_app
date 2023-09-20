@@ -7,7 +7,7 @@ import 'model/ingredients.dart';
 
 abstract class IGetIngredientsRemoteDataSource {
   Future<List<IngredientsModel>> getIngredients();
-  Future<List<GetRecipesModel>> getRecipes(List<String> recipes);
+  Future<List<GetRecipesModel>> getRecipes(String recipes);
 }
 
 class GetIngredientsRemoteDataSource
@@ -30,9 +30,10 @@ class GetIngredientsRemoteDataSource
   }
 
   @override
-  Future<List<GetRecipesModel>> getRecipes(List<String> recipes) async {
+  Future<List<GetRecipesModel>> getRecipes(String recipes) async {
     try {
       final response = await http.get(recipeEndpoints.getRecipes(recipes));
+      print(recipeEndpoints.getRecipes(recipes));
       if (response != null) {
         final data = response as List;
         return data.map((item) => GetRecipesModel.fromJson(item)).toList();

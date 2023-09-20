@@ -21,7 +21,7 @@ class IngredientsRepository extends Repository {
   }
 
   Future<Either<Failure, List<GetRecipesModel>>> getRecipes(
-      List<String> recipes) async {
+      String recipes) async {
     return runGuard(() async {
       final response = await remoteDataSource.getRecipes(recipes);
 

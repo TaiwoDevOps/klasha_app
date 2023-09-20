@@ -40,7 +40,7 @@ class DashboardVM extends ChangeNotifier {
     getRecipesRES = ApiResult<List<GetRecipesModel>>.loading('Loading...');
     notifyListeners();
     final failureOrIngredients =
-        await ingredientsRepository.getRecipes(recipes);
+        await ingredientsRepository.getRecipes(recipes.join(','));
 
     failureOrIngredients.fold(
       (failure) {
